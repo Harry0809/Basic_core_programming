@@ -3,20 +3,23 @@ package com.basic.programm;
 import java.util.Scanner;
 
 public class _BasicCoreProgram {
+	static int n;
+
 	public static void main(String[] args) {
 
-		double result = 0, num = 0, i;
-		int n;
 		Scanner sc = new Scanner(System.in);
-
-		System.out.print("enter the harmonic you want to find: ");
+		System.out.println("Enter the any number:");
 		n = sc.nextInt();
+		System.out.print("The Prime Factors of " + n + " are : ");
 
-		for (i = 1; i <= n; i++) {
-			num = num + (1 / i);
-			result = num;
+		int i = 2;
+		while (n > 1) {
+			if (n % i == 0) {
+				System.out.print(i + " ");
+				n = n / i;
+			} else
+				i++;
 		}
-		System.out.println("the value of harmonic no. " + n + " is: " + result);
-
+		System.out.println(" ");
 	}
 }

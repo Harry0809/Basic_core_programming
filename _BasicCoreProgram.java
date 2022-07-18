@@ -1,39 +1,39 @@
 package com.basic.programm;
 
+
+
 import java.util.Scanner;
+
 public class _BasicCoreProgram {
-	
+	double t = 0;
+	double v = 0;
 	Scanner sc = new Scanner(System.in);
-	public void input(){
-		System.out.println("Enter the value for a");
-		int a = sc.nextInt();
-		System.out.println("Enter the value for b");
-		int b = sc.nextInt();
-		System.out.println("Enter the value for c");
-		int c = sc.nextInt();
-		System.out.  println("find the roots of the equation "+a+"*x*x + "+b+"x + "+c);
-		computedelta(a,b,c);
+
+	public void input() {
+		System.out.println("Enter the Temperature in Farenheit");
+		t = sc.nextDouble();
+		System.out.println("Temperature :" + t + "F");
+		System.out.println();
+		System.out.println("Enter the Wind speed ");
+		v = sc.nextDouble();
+		System.out.println("Wind speed (in miles per hour)" + v);
+	}
+
+	public void calculation() {
+		input();
+		if (t > 50 || v > 120) {
+			double w = 35.74 + 0.6215 * t + (0.4275 * t - 35.75) * Math.pow(v, 0.16);
+			System.out
+					.println("National Weather Service defines the effective temperature (the wind chill) to be:" + w);
+		} else {
+			System.out.println("Pleas enter the value within range");
 		}
-    
-	public void computedelta(int a, int b,int c) {
-		int delta = b * b - 4 * a *c;
-	   System.out.println(delta);
-	   
-	   if(delta > 0 ) {
-		   double x1 = (-b + Math.sqrt(delta))/(2*a);
-		   double x2 = (-b - Math.sqrt(delta))/(2*a);
-	          System.out.println("Root 1 of x :"+x1);
-	          System.out.println("Root 2 of x :"+x2);
-	   }else if(delta == 0) {
-		      double x1 = -b / (2.0 * a);
-              System.out.println("The root is " + x1);   
-	   }else {
-		      System.out.println("Roots are not real.");
-	   }
 	}
 
 	public static void main(String[] args) {
-		_BasicCoreProgram obj = new  _BasicCoreProgram();
-		 obj.input();
+
+		_BasicCoreProgram wind = new _BasicCoreProgram();
+		wind.calculation();
 	}
+
 }

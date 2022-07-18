@@ -4,27 +4,101 @@ import java.util.Scanner;
 
 public class _BasicCoreProgram {
 
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		_BasicCoreProgram num = new _BasicCoreProgram();
-		System.out.println("Enter a number");
-		int X = sc.nextInt();
-		System.out.println("Enter a number");
-		int Y = sc.nextInt();
-		System.out.println("Enter a number");
-		int Z = sc.nextInt();
-		num.maxinum(X, Y, Z);
+	Scanner sc = new Scanner(System.in);
 
+	// Integer Matrix
+	public void inputInteger() {
+		int Array[][] = new int[10][10];
+		System.out.println("Enter the number of row and colums array");
+		int m = sc.nextInt();
+		int n = sc.nextInt();
+		System.out.println("Enter the elements in array");
+		for (int i = 0; i < m; i++) {
+			for (int j = 0; j < n; j++) {
+
+				Array[i][j] = sc.nextInt();
+			}
+		}
+		printInteger(Array, m, n);
 	}
 
-	public void maxinum(int x, int y, int z) {
-		if (x > y && x > z) {
-			System.out.println(x + " is a Largest Number");
-		} else if (y > x && y > z) {
-			System.out.println(y + " is a Largest Number");
-		} else {
-			System.out.println(z + " is a Largest Number");
+	public void printInteger(int[][] a, int x, int y) {
+		System.out.println("Elements in array");
+		for (int i = 0; i < x; i++) {
+			for (int j = 0; j < y; j++) {
+
+				System.out.println(a[i][j]);
+			}
 		}
 	}
 
+	// Double Matrix
+	public void inputDouble() {
+
+		Double Array[][] = new Double[10][10];
+		System.out.println("Enter the number of row and colums array");
+		int m = sc.nextInt();
+		int n = sc.nextInt();
+		System.out.println("Enter the elements in array");
+		for (int i = 0; i < m; i++) {
+			for (int j = 0; j < n; j++) {
+
+				Array[i][j] = sc.nextDouble();
+			}
+		}
+		printDouble(Array, m, n);
+	}
+
+	public void printDouble(Double[][] a, int x, int y) {
+		System.out.println("Elements in array");
+		for (int i = 0; i < x; i++) {
+			for (int j = 0; j < y; j++) {
+
+				System.out.println(a[i][j]);
+			}
+		}
+	}
+
+	public void inputBoolean() {
+
+		Boolean Array[][] = new Boolean[10][10];
+		System.out.println("Enter the number of row and colums array");
+		int m = sc.nextInt();
+		int n = sc.nextInt();
+		System.out.println("Enter the elements in array");
+		for (int i = 0; i < m; i++) {
+			for (int j = 0; j < n; j++) {
+
+				Array[i][j] = sc.nextBoolean();
+			}
+		}
+		printBoolean(Array, m, n);
+	}
+
+	public void printBoolean(Boolean[][] a, int x, int y) {
+		System.out.println("Elements in array");
+		for (int i = 0; i < x; i++) {
+			for (int j = 0; j < y; j++) {
+				// System.out.println(a[i][j]);
+				if (a[i][j]) {
+					System.out.print("1 ");
+				} else {
+					System.out.println("0 ");
+				}
+			}
+		}
+	}
+
+	public static void main(String[] args) {
+
+		_BasicCoreProgram obj = new _BasicCoreProgram();
+		System.out.println("Matrix Integer");
+		obj.inputInteger();
+		System.out.println();
+		System.out.println("Matrix Double");
+		obj.inputDouble();
+		System.out.println();
+		System.out.println("Matrix Boolean");
+		obj.inputBoolean();
+	}
 }

@@ -1,104 +1,37 @@
 package com.basic.programm;
 
-import java.util.Scanner;
-
 public class _BasicCoreProgram {
-
-	Scanner sc = new Scanner(System.in);
-
-	// Integer Matrix
-	public void inputInteger() {
-		int Array[][] = new int[10][10];
-		System.out.println("Enter the number of row and colums array");
-		int m = sc.nextInt();
-		int n = sc.nextInt();
-		System.out.println("Enter the elements in array");
-		for (int i = 0; i < m; i++) {
-			for (int j = 0; j < n; j++) {
-
-				Array[i][j] = sc.nextInt();
-			}
-		}
-		printInteger(Array, m, n);
-	}
-
-	public void printInteger(int[][] a, int x, int y) {
-		System.out.println("Elements in array");
-		for (int i = 0; i < x; i++) {
-			for (int j = 0; j < y; j++) {
-
-				System.out.println(a[i][j]);
-			}
-		}
-	}
-
-	// Double Matrix
-	public void inputDouble() {
-
-		Double Array[][] = new Double[10][10];
-		System.out.println("Enter the number of row and colums array");
-		int m = sc.nextInt();
-		int n = sc.nextInt();
-		System.out.println("Enter the elements in array");
-		for (int i = 0; i < m; i++) {
-			for (int j = 0; j < n; j++) {
-
-				Array[i][j] = sc.nextDouble();
-			}
-		}
-		printDouble(Array, m, n);
-	}
-
-	public void printDouble(Double[][] a, int x, int y) {
-		System.out.println("Elements in array");
-		for (int i = 0; i < x; i++) {
-			for (int j = 0; j < y; j++) {
-
-				System.out.println(a[i][j]);
-			}
-		}
-	}
-
-	public void inputBoolean() {
-
-		Boolean Array[][] = new Boolean[10][10];
-		System.out.println("Enter the number of row and colums array");
-		int m = sc.nextInt();
-		int n = sc.nextInt();
-		System.out.println("Enter the elements in array");
-		for (int i = 0; i < m; i++) {
-			for (int j = 0; j < n; j++) {
-
-				Array[i][j] = sc.nextBoolean();
-			}
-		}
-		printBoolean(Array, m, n);
-	}
-
-	public void printBoolean(Boolean[][] a, int x, int y) {
-		System.out.println("Elements in array");
-		for (int i = 0; i < x; i++) {
-			for (int j = 0; j < y; j++) {
-				// System.out.println(a[i][j]);
-				if (a[i][j]) {
-					System.out.print("1 ");
-				} else {
-					System.out.println("0 ");
-				}
-			}
-		}
-	}
 
 	public static void main(String[] args) {
 
-		_BasicCoreProgram obj = new _BasicCoreProgram();
-		System.out.println("Matrix Integer");
-		obj.inputInteger();
-		System.out.println();
-		System.out.println("Matrix Double");
-		obj.inputDouble();
-		System.out.println();
-		System.out.println("Matrix Boolean");
-		obj.inputBoolean();
+		int arr[] = { 0, -1, 2, -3, 1 };
+		int n = arr.length;
+		findTriplets(arr , n);
+	
+	class Num {
+
+		void findTriplets(int arr[], int n) {
+			boolean check = false;
+			for (int i = 0; i < n - 2; i++) {
+				for (int j = i + 1; j < n - 1; j++) {
+					for (int k = j + 1; k < n; k++) {
+						if (arr[i] + arr[j] + arr[k] == 0) {
+							System.out.print(arr[i]);
+							System.out.print(" ");
+							System.out.print(arr[j]);
+							System.out.print(" ");
+							System.out.print(arr[k]);
+							System.out.print("");
+							check = true;
+						}
+					}
+				}
+			}
+
+			if (check == false)
+				System.out.println(" not exist ");
+
+		}
 	}
+  }
 }

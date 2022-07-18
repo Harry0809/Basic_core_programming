@@ -3,23 +3,18 @@ package com.basic.programm;
 import java.util.Scanner;
 
 public class _BasicCoreProgram {
-	static int n;
 
 	public static void main(String[] args) {
-
 		Scanner sc = new Scanner(System.in);
-		System.out.println("Enter the any number:");
-		n = sc.nextInt();
-		System.out.print("The Prime Factors of " + n + " are : ");
+		System.out.println("Enter th Dividened");
+		int number1 = sc.nextInt();
+		System.out.println("Enter the Divisor");
+		int number2 = sc.nextInt();
+		double quotient = (double) number1 / number2;
+		System.out.println("Quotient :" + quotient);
+		int remainder = number1 % number2;
+		System.out.println("Remainder :" + remainder);
 
-		int i = 2;
-		while (n > 1) {
-			if (n % i == 0) {
-				System.out.print(i + " ");
-				n = n / i;
-			} else
-				i++;
-		}
-		System.out.println(" ");
 	}
+
 }
